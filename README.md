@@ -13,7 +13,7 @@ The input text will be fed to a pretrained model, deployed in [tensorflowjs](htt
 Model deployed in a tensorflowjs format.
 
 #### Usage
-Simply open the [webpage](oscar-defelice.github.io/txt-clf-api.github.io).
+Simply open the [webpage](https://oscar-defelice.github.io/txt-clf-api.github.io).
 Input a text and press predict.
 
 ### Enjoy!
