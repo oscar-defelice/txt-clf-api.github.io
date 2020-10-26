@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname" style="text-align:center;">
+			Text Classifier
+		</div>
+		<h2 style="text-align:center;">A text classifier for article news</h2>
+
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Results for inserted text</b></p>
+	<div class="results">
+
+	{% if text %}
+	<h2 style="text-align:center;font-size:35;">{{ text }}</h2>
+	{% endif %}
+
+	{% if prediction == 'Business News'%}
+	<h2 style="color:red;text-align:center;">Business News</h2>
+	{% elif prediction == 'Science-Technology News'%}
+	<h2 style="color:blue;text-align:center;">Science-Technology News</h2>
+  {% elif prediction == 'Sports News'%}
+	<h2 style="color:green;text-align:center;">Sports News</h2>
+  {% elif prediction == 'World News'%}
+  <h2 style="color:orange;text-align:center;">World News</h2>
+	{% endif %}
+
+	</div>
+
+  <div id="powered_by">
+  Powered by
+  <a style="text-align:center;" href="https://oscar-defelice.github.io">Oscar de felice</a>
+	<a style="text-align:center;" href="https://oscar-defelice.github.io">
+    <img src="https://user-images.githubusercontent.com/49638680/97081235-439be280-1601-11eb-919c-5b7ebda3d6c5.png" height="64" style="text-align:center;"/>
+  </a>
+</div>
+
+</body>
+</html>
