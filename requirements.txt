@@ -2,3 +2,4 @@ flask==1.1.2
 keras
 sklearn
 numpy
+json
