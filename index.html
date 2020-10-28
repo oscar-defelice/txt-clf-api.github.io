@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+<script src="handle-data.js"></script>
+<meta charset="UTF-8">
+<title>Text Classifier</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+	<h1>Text Classifier</h1>
+	<div>
+		<div class="center">
+			<h3>Insert here the text of some news you want to classify</h3>
+		</div>
+	</div>
+    <input type="text" id="myText" value="Some text...">
+    <p> </p>
+    <button type="Predict" id="5" onclick="Predict()" >Predict</button>
+	<div id="dummy">Once you are ready, click "Predict" to visualise the predicted class of your text.</div>
+	<div id="prediction"></div>
+</body>
+
+<script src="model.js"></script>
+</html>
