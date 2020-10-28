@@ -1,6 +1,9 @@
 let model;
+let vocab;
+let word2index;
 let modelPath = 'model/model.json';
-let vocabPath = 'model/vocab.json';
+let vocabPath = 'https://raw.githubusercontent.com/oscar-defelice/txt-clf-api.github.io/main/model/vocab.json';
+let maxLen = 75;
 let numClasses;
 
 // loadModel function to get model from json.
@@ -9,54 +12,37 @@ async function loadModel() {
   return model;
 }
 
-// loadVocab function to get the vocabulary from json.
 async function loadVocab() {
-  const vocab = JSON.parse(vocabPath);
+    let vocab = await (await fetch(vocabPath)).json();
+    return vocab;
 }
 
+function tokenise(text) {
+    console.log(word2index.the)
+    var splitted_text = text.split(' ');
+    var tokens = [];
+    splitted_text.forEach(element => {
+        if (word2index[element] != undefined) {
+            tokens.push(word2index[element]);
+        }
+    });
+    while (tokens.length < maxLen) {
+        tokens.push(0);
+    }
 
-function handleButton(elem){
-	switch(elem.id){
-		case "0":
-			zeroSamples++;
-			document.getElementById("zeroSamples").innerText = "Zero samples:" + zeroSamples;
-			break;
-		case "1":
-			oneSamples++;
-			document.getElementById("oneSamples").innerText = "One samples:" + oneSamples;
-			break;
-		case "2":
-			twoSamples++;
-			document.getElementById("twoSamples").innerText = "Two samples:" + twoSamples;
-			break;
-		case "3":
-			threeSamples++;
-			document.getElementById("threeSamples").innerText = "Three samples:" + threeSamples;
-			break;
-        case "4":
-            fourSamples++;
-            document.getElementById("fourSamples").innerText = "Four samples" + fourSamples;
-            break;
-        case "5":
-            fiveSamples++;
-            document.getElementById("fiveSamples").innerText = "Five samples" + fiveSamples;
-            break;
-	}
-	label = parseInt(elem.id);
-	const img = webcam.capture();
-	dataset.addExample(mobilenet.predict(img), label);
-
+return tokens.slice(0,maxLen);
 }
 
 async function predict() {
-    
     const predictedClass = tf.tidy(() => {
       const text = document.getElementById("myText").value;
-      const tokenisation = tokenise(text);
-      const predictions = model.predict(tokenisation);
+      const tokenisation = tokenise(text, word2index);
+        console.log(tokenisation);
+      const predictions = model.predict(tf.tensor2d(tokenisation, [1, maxLen]));
+        console.log(predictions);
       return predictions.as1D().argMax();
     });
-    
+
     const classId = (await predictedClass.data())[0];
     var predictionText = "";
     switch(classId){
@@ -86,8 +72,7 @@ function doPredict(){
 
 async function init(){
 	model = await loadModel();
-	tf.tidy(() => model.predict(webcam.capture()));
-
+    word2index = await loadVocab();
 }
 
 init();
