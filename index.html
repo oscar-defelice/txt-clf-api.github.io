@@ -15,6 +15,9 @@
 <body>
 	<h1>Text Classifier</h1>
 	<div>
+		<p style="text-align: justify">The model has been trained on <a href="https://www.tensorflow.org/datasets/catalog/ag_news_subset" style="color:white">AG News dataset</a>.
+			The AG's news topic classification dataset is constructed by choosing 4 largest classes from the original corpus. Each class contains 30,000 training samples and 1,900 testing samples.
+			The total number of training samples is 120,000 and testing 7,600. </p>
 		<div class="center">
 			<h3>Insert here the text of some news you want to classify</h3>
 		</div>
@@ -23,6 +26,7 @@
     <p> </p>
     <button type="Predict" id="5" onclick="doPredict()" >Predict</button>
 	<div id="dummy">Once you are ready, click "Predict" to visualise the predicted class of your text.</div>
+	<p><br> </p>
 	<div id="prediction"></div>
     <p><br> </p>
     <p><br> </p>
