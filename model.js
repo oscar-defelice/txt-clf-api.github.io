@@ -37,9 +37,7 @@ async function predict() {
     const predictedClass = tf.tidy(() => {
       const text = document.getElementById("myText").value;
       const tokenisation = tokenise(text, word2index);
-        console.log(tokenisation);
       const predictions = model.predict(tf.tensor2d(tokenisation, [1, maxLen]));
-        console.log(predictions);
       return predictions.as1D().argMax();
     });
 
