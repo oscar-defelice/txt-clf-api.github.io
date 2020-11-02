@@ -19,3 +19,5 @@ Simply open the [webpage](https://oscar-defelice.github.io/txt-clf-api.github.io
 Input a text and press predict.
 
 ### Enjoy!
+
+#### p.s. this repository served as the base for [this Medium post](https://oscar-defelice.medium.com/the-full-stack-story-of-a-text-classifier-842abad9ff16?source=friends_link&sk=8141357dfb695b42594584642b42950a&fbclid=IwAR2__F9MQqq22s_DkdFvhFKwFFXH5DZpThZATGR5Kee8UhN343uVcLeiCsY)
