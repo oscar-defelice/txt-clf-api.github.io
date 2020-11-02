@@ -61,7 +61,6 @@ async function predict() {
 
 
     predictedClass.dispose();
-    await tf.nextFrame();
 }
 
 function doPredict(){
