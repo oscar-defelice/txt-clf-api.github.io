@@ -18,7 +18,7 @@ async function loadVocab() {
 }
 
 function tokenise(text) {
-    console.log(word2index.the)
+    text = text.toLowerCase();
     var splitted_text = text.split(' ');
     var tokens = [];
     splitted_text.forEach(element => {
