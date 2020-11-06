@@ -5,11 +5,15 @@ This repository contains the code useful to publish a web Api to input and predi
 The input text will be fed to a pretrained model, deployed in [tensorflowjs](https://www.tensorflow.org/js).
 
 ## Components
-- Backend: 
+- Backend:
     * v1. Flask (I know that TFJS supports node now but for the sake of suitable preprocessing it's in python).
     * v2. Python
 - Preprocessing: conversion of text in sequences.
 - Frontend: tensorflowjs (I have a script in head from cdn, made for python developers in order not to download a module).
+
+## Repository structure
+
+<img src="https://user-images.githubusercontent.com/49638680/98393644-ddc84580-2059-11eb-8553-45489e33964d.png" width="100%" align="center"/>
 
 ## Model
 Model deployed in a tensorflowjs format.
