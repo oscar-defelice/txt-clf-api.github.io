@@ -1,7 +1,7 @@
 # Web API for text classifier model
 
 ## Introduction
-This repository contains the code useful to publish a web Api to input and predict the class of a text.
+This repository contains the code useful to publish a web API to input and predict the class of a text.
 The input text will be fed to a pretrained model, deployed in [tensorflowjs](https://www.tensorflow.org/js).
 
 ## Components
