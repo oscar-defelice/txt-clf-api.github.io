@@ -1,4 +1,4 @@
-# Api for text classifier model
+# Web API for text classifier model
 
 ## Introduction
 This repository contains the code useful to publish a web Api to input and predict the class of a text.
