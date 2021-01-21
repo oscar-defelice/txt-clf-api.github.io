@@ -12,6 +12,7 @@ async function loadModel() {
   return model;
 }
 
+// loadVocab function to get tokeniser from json.
 async function loadVocab() {
     let vocab = await (await fetch(vocabPath)).json();
     return vocab;
